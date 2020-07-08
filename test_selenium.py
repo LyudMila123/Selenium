@@ -108,9 +108,9 @@ class SeleniumEasyHomeTask(unittest.TestCase):
         button_uncheck_all = self.driver.find_element_by_xpath('//div[@class="panel panel-default"]//input[@class="btn btn-primary"]')
         assert button_uncheck_all.is_displayed()
 
-    def test_multiple_for_all(self):
-        get_click_on_check_all = self.driver.find_element_by_xpath('//div[@class="panel panel-default"]//input[@class="btn btn-primary"]')
-        show_button = get_click_on_check_all.get_attribute('value')
+    # def test_multiple_for_all(self):
+    #     get_click_on_check_all = self.driver.find_element_by_xpath('//div[@class="panel panel-default"]//input[@class="btn btn-primary"]')
+    #     show_button = get_click_on_check_all.get_attribute('value')
 
     def test_multiple_for_option(self):
         checkboxes = self.driver.find_elements_by_xpath('//div[@class="panel-body"]//input[@class="cb1-element"]')
@@ -124,17 +124,17 @@ class SeleniumEasyHomeTask(unittest.TestCase):
         get_click_on_uncheck_all = self.driver.find_element_by_xpath('//div[@class="panel panel-default"]//input[@value="Uncheck All"]')
         get_click_on_check_all = get_click_on_uncheck_all
         if checkboxes_list[0].click():
-            return get_click_on_check_all
-            assert check_all.is_displayed()
+            # return get_click_on_check_all
+            assert get_click_on_check_all.is_displayed()
         elif checkboxes_list[1].click():
-            return get_click_on_check_all
-            assert check_all.is_displayed()
+            # return get_click_on_check_all
+            assert get_click_on_check_all.is_displayed()
         elif checkboxes_list[2].click():
-            return get_click_on_check_all
-            assert check_all.is_displayed()
+            # return get_click_on_check_all
+            assert get_click_on_check_all.is_displayed()
         elif checkboxes_list[3].click():
-            return get_click_on_check_all
-            assert check_all.is_displayed()
+            # return get_click_on_check_all
+            assert get_click_on_check_all.is_displayed()
         else:
             return 'There are no options'
 

@@ -24,25 +24,6 @@ class SeleniumEasyRadioButton(unittest.TestCase):
         message = self.driver.find_element_by_xpath('//p[@class="radiobutton"]')
         assert message.is_displayed(), "Radio button 'Female' is checked"
 
-    def test_radio_button_demo_for(self):
-        radio_button_demo = self.driver.find_elements_by_xpath('//div[@class="panel-body"]/label[@class="radio-inline"]')
-        radio_demo_list = []
-
-        for element in radio_button_demo:
-            radio_demo_list.append(element)
-
-        radio_demo_male = radio_demo_list[0].click()
-        checked_value = self.driver.find_element_by_id('buttoncheck')
-        checked_value.click()
-        message_male = self.driver.find_element_by_xpath('//p[@class="radiobutton"]')
-        assert message_male.is_displayed(), "Radio button 'Male' is checked"
-
-        radio_demo_female = radio_demo_list[1].click()
-        checked_value = self.driver.find_element_by_id('buttoncheck')
-        checked_value.click()
-        message_female = self.driver.find_element_by_xpath('//p[@class="radiobutton"]')
-        assert message_female.is_displayed(), "Radio button 'Female' is checked"
-
     def test_group_radio_buttons_demo_male_0_to_5(self):
         group_radio_button_demo_male = self.driver.find_element_by_xpath('//input[@value="Male"][@name="gender"]')
         group_radio_button_demo_male.click()
@@ -157,6 +138,25 @@ class SeleniumEasyRadioButton(unittest.TestCase):
         get_value.click()
         message = self.driver.find_element_by_xpath('//p[@class="groupradiobutton"]')
         assert message.is_displayed(), 'Sex : Female Age group: 15 - 50'
+
+    def test_radio_button_demo_for(self):
+        radio_button_demo = self.driver.find_elements_by_xpath('//div[@class="panel-body"]/label[@class="radio-inline"]')
+        radio_demo_list = []
+
+        for element in radio_button_demo:
+            radio_demo_list.append(element)
+
+        radio_demo_male = radio_demo_list[0].click()
+        checked_value = self.driver.find_element_by_id('buttoncheck')
+        checked_value.click()
+        message_male = self.driver.find_element_by_xpath('//p[@class="radiobutton"]')
+        assert message_male.is_displayed(), "Radio button 'Male' is checked"
+
+        radio_demo_female = radio_demo_list[1].click()
+        checked_value = self.driver.find_element_by_id('buttoncheck')
+        checked_value.click()
+        message_female = self.driver.find_element_by_xpath('//p[@class="radiobutton"]')
+        assert message_female.is_displayed(), "Radio button 'Female' is checked"
 
     def tearDown(self):
         self.driver.close()
